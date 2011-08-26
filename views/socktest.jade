@@ -1,0 +1,30 @@
+!!! 5
+html(lang="en")
+ head
+  title=title
+  script(type='text/javascript', src='/socket.io/socket.io.js')
+  script(type='text/javascript', src='/javascripts/volume.js')
+  script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js')
+  link(rel="shortcut icon",href="/images/vol.ico") 
+ body
+  h1 Master volume:
+   span(id="currentVol")=currentVol+"%"
+  input(type='button',value='<',id='down',class="can-disable",onclick="volChange(0)")
+  input(class="range can-disable",id="volume",value=currentVol,type="range",min="0",max="100",onchange='setVolume(this.value)')
+  input(type='button',value='>',id='up',class="can-disable",onclick="volChange(1)")
+  input(type='button',class="call-status",value='In call',id='hold',onclick="hold(this,'all')")
+  h1 Browser balance: 
+   span(id="browserBal")=currentBalLeft+"%"
+  div(id="browser-holder")
+   input(type='button',value='<',class="can-disable",onclick="balChange(0,'browser')")
+   input(class="range can-disable",id="balBrowser",value=currentBalLeft,type="range",min="0",max="100",onchange="setBal(this.value,'browser')")
+   input(type='button',value='>',class="can-disable",onclick="balChange(1,'browser')")
+   input(type='button',class="call-status",value='In call',id='hold-browser',onclick="hold(this,'browser')")
+  h1 Uvd balance:
+   span(id="uvdBal")=currentBalRight+"%"
+  div(id="uvd-holder")
+   input(type='button',value='<',class="can-disable",onclick="balChange(0,'uvd')")
+   input(class="range can-disable",id="balUvd",value=currentBalRight,type="range",min="0",max="100",onchange="setBal(this.value,'uvd')")
+   input(type='button',value='>',class="can-disable",onclick="balChange(1,'uvd')")
+   input(type='button',class="call-status",value='In call',id='hold-uvd',onclick="hold(this,'uvd')")
+

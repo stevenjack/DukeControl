@@ -1,0 +1,25 @@
+# Eclipse
+/.project
+/.settings
+/.buildpath
+/.cache
+# Windows
+Thumbs.db
+
+# Node modules
+/node_modules
+/node_modules/*
+.monitor
+
+# Vim
+.*.sw[a-z]
+*.un~i
+tags
+
+# OsX
+.AppleDouble
+.DS_Store
+Icon?
+._*
+.Spotlight-V100
+.Trashes

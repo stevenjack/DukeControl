@@ -1,0 +1,31 @@
+!!! 5
+html(lang="en")
+ head
+  title=title
+  script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js')
+  script(type='text/javascript', src='/socket.io/socket.io.js')
+  script(type='text/javascript', src='/javascripts/volume.js')
+  link(rel="shortcut icon",href="/images/vol.ico") 
+ body
+  div(id="master-holder",data-type="master")
+   h1 Master volume:
+    span(id="currentVol")=master+"%"
+   input(type='button',value='&lt;',class="can-disable down")
+   input(class="range can-disable",value=master,type="range",min="0",max="100")
+   input(type='button',value='&gt;',class="can-disable up")
+   input(type='button',class="call-status",value='In call')
+  div(id="left-holder",data-type="left")
+   h1 Browser balance: 
+    span(id="browserBal")=left+"%"  
+   input(type='button',value='&lt;',class="can-disable down")
+   input(class="range can-disable",value=left,type="range",min="0",max="100")
+   input(type='button',value='&gt;',class="can-disable up")
+   input(type='button',class="call-status",value='In call')
+  div(id="right-holder",data-type="right")
+   h1 Uvd balance:
+    span(id="uvdBal")=right+"%"  
+   input(type='button',value='&lt;',class="can-disable down")
+   input(class="range can-disable",value=right,type="range",min="0",max="100")
+   input(type='button',value='&gt;',class="can-disable up")
+   input(type='button',class="call-status",value='In call')
+
