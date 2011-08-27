@@ -1,11 +1,12 @@
 var socket = null;
 var DukeBox = {
 	state:{
-		master:{ enabled: true, level:50 },
+		master:{ enabled: true, level:80 },
 		left:{ enabled:true, level:80 },
-		right:{ enabled:true, level:90 },
+		right:{ enabled:true, level:80 },
 		currentId:null
 	},
+	host: '192.168.10.170',
 	buttonStates:{ enabled:'In call', disabled: 'Call finished'},
 	setHold: function(element) {
 		type = element.parent().data('type');
@@ -93,7 +94,7 @@ var DukeBox = {
 };
 
 $(document).ready(function(){
-	socket = io.connect('http://192.168.10.170');
+	socket = io.connect('http://'+DukeBox.host);
 	socket.on('init',function(data){
 		DukeBox.init(data);
 	});

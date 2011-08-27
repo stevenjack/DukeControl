@@ -13,9 +13,9 @@ exec = require('child_process').exec;
 
 var DukeBox = {
 	state:{
-		master:{ enabled: true,level:50},
+		master:{ enabled: true,level:80},
 		left:{ enabled:true, level:80},
-		right:{ enabled:true, level:90},
+		right:{ enabled:true, level:80},
 		currentId:null
 	},
 	mixer: { left: 80, right: 80, type: 'PCM' },
@@ -34,7 +34,7 @@ var DukeBox = {
 		this.mixer.right = Math.round((this.getLevel('right') / 100) * this.getLevel('master'));
 		var duke = this;
 		exec("amixer -c 0 -- sset '"+this.mixer.type+"' "+this.mixer.left+"%,"+this.mixer.right+"%",
-			function (error, stdout, stderr) {
+				function (error, stdout, stderr) {
 				io.sockets.emit('volume',duke.getState());
 			}
 		);
@@ -78,7 +78,7 @@ app.get('/', function(req, res){
 
 //Enable server
 
-app.listen(80);
+app.listen(5555);
 
 //Initialise DukeBox
 DukeBox.init();
