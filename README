@@ -1,6 +1,6 @@
 DukeControl
 
-This is a little project I used as a way of getting into NodeJS. It's a very simple socket server that takes into from any client connected to the socket, and changes the volume on the machine it's running on and broadcasts the new state to all connected clients. We use it on a computer in our office that is our 'dukebox' and everyone can access the frontend to control the volume. I opted to use the html5 range input type as everyone in our office uses chrome!
+This is a little project I used as a way of getting into NodeJS. It's a very simple socket server that takes data from any client connected to the socket, and changes the volume on the machine it's running on and broadcasts the new state to all connected clients. We use it on a computer in our office that is our 'dukebox' and everyone can access the frontend to control the volume. I opted to use the html5 range input type as everyone in our office uses chrome!
 
 I'm not sure if amixer is standard, but we run it on Ubuntu 10.4 Dekstop and I'm not sure which other distros it will work on!
 
